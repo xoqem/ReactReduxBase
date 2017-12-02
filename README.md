@@ -1,6 +1,7 @@
 # ReactReduxBase
 Boilerplate for a react / redux project.
 
+
 ## Dependencies
 
 Install dependencies with yarn:
@@ -9,17 +10,19 @@ Install dependencies with yarn:
 yarn install
 ```
 
+
 ## Development
 
-### Manually building
+### Webpack Dev Server
 
-Build the project:
+Creates a webpack dev server and watches for changes:
 
 ```
-yarn run build
+yarn run start
 ```
 
-Open dist/index.html in a browser.
+Open http://localhost:8080/ in a browser.
+
 
 ### Watch
 
@@ -27,6 +30,17 @@ Have webpack watch for changes and automatically rebuild with:
 
 ```
 yarn run watch
+```
+
+Open dist/index.html in a browser.
+
+
+### Manually building
+
+Build the project:
+
+```
+yarn run build
 ```
 
 Open dist/index.html in a browser.
