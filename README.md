@@ -9,10 +9,10 @@ First install dependencies with yarn:
 yarn install
 ```
 
-Run webpack:
+Build the project:
 
 ```
-webpack
+yarn run build
 ```
 
 Open dist/index.html in a browser.
