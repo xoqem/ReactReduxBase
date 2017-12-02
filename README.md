@@ -9,8 +9,10 @@ First install dependencies with yarn:
 yarn install
 ```
 
-Next create the webpack bundle:
+Run webpack:
 
 ```
-webpack src/index.js dist/bundle.js
+webpack
 ```
+
+Open dist/index.html in a browser.
