@@ -3,6 +3,7 @@
     "webpack": "^3.9.1"
   },
   "scripts": {
-    "build": "webpack"
+    "build": "webpack",
+    "watch": "webpack --watch"
   }
 }
