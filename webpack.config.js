@@ -25,6 +25,8 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin()
+    new HtmlWebpackPlugin({
+      title: 'React Redux Base'
+    })
   ]
 };
