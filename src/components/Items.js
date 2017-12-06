@@ -1,25 +1,15 @@
-import { bindActionCreators } from 'redux';
 import { Component } from 'react';
 import { connect } from 'react-redux';
+import Item from 'components/Item';
 import React from 'react';
-import { deleteItemAtIndex } from 'actions/items';
 
 class Items extends Component {
   render() {
-    const { deleteItemAtIndex, items } = this.props;
+    const { items } = this.props;
 
-    const itemComponents = items.map((item, index) => {
-      const onDeleteClick = () => {
-        deleteItemAtIndex(index);
-      };
-
-      return (
-        <div key={index}>
-          {index + 1}. {item}
-          <button onClick={onDeleteClick}>Delete</button>
-        </div>
-      );
-    });
+    const itemComponents = items.map((item, index) => (
+      <Item index={index} key={index} text={item} />
+    ));
 
     return (
       <div>
@@ -36,8 +26,4 @@ function mapStateToProps(state) {
   };
 }
 
-function mapDispatchToProps(dispatch) {
-  return bindActionCreators({ deleteItemAtIndex }, dispatch);
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(Items);
+export default connect(mapStateToProps)(Items);
