@@ -6,7 +6,7 @@ import React from 'react';
 import { deleteItemAtIndex } from 'actions/items';
 
 class Item extends Component {
-  _onClickDelete = () => {
+  onClickDelete = () => {
     const { deleteItemAtIndex, index } = this.props;
     deleteItemAtIndex(index);
   };
@@ -17,7 +17,7 @@ class Item extends Component {
     return (
       <div>
         {index + 1}. {text}
-        <button onClick={this._onClickDelete}>Delete</button>
+        <button onClick={this.onClickDelete}>Delete</button>
       </div>
     );
   }

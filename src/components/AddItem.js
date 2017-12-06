@@ -6,14 +6,14 @@ import React from 'react';
 import { setAddItemText } from 'actions/addItem';
 
 class AddItem extends Component {
-  _onClickAdd = () => {
+  onClickAdd = () => {
     const { addItem, setAddItemText, text } = this.props;
 
     addItem(text);
     setAddItemText('');
   }
 
-  _onInputChange = (event) => {
+  onInputChange = event => {
     this.props.setAddItemText(event.target.value);
   }
 
@@ -23,8 +23,8 @@ class AddItem extends Component {
     return (
       <div>
         <h2>Add Item</h2>
-        <input type="text" onChange={this._onInputChange} value={text} />
-        <button onClick={this._onClickAdd}>Add</button>
+        <input type="text" onChange={this.onInputChange} value={text} />
+        <button onClick={this.onClickAdd}>Add</button>
       </div>
     );
   }
