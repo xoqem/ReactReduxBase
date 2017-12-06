@@ -1,9 +1,7 @@
 import React from 'react';
 
-const App = () => (
+export default () => (
   <div>
     <h1>React Redux Base - App</h1>
   </div>
 );
-
-export default App;
