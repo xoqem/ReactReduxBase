@@ -11,6 +11,8 @@ const element = document.createElement('div');
 document.body.appendChild(element);
 
 render(
-  <App />,
+  <Provider store={store}>
+    <App />
+  </Provider>,
   element
 );
