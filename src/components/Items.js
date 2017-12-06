@@ -14,7 +14,7 @@ class Items extends Component {
       };
 
       return (
-        <div>
+        <div key={index}>
           {index + 1}. {item}
           <button onClick={onDeleteClick}>Delete</button>
         </div>
