@@ -4,6 +4,8 @@ Boilerplate for a react / redux project.
 
 ## Dependencies
 
+If you haven't installed yarn on your system, do that first: https://yarnpkg.com
+
 Install dependencies with yarn:
 
 ```

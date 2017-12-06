@@ -6,6 +6,12 @@ module.exports = {
   devServer: {
     contentBase: './dist'
   },
+  resolve: {
+    modules: [
+      path.resolve(__dirname, 'src'),
+      'node_modules'
+    ]
+  },
   output: {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist')
