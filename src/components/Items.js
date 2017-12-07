@@ -7,7 +7,7 @@ class Items extends React.Component {
     const { items } = this.props;
 
     const itemComponents = items.map((item, index) => (
-      <Item index={index} key={item} text={item} />
+      <Item index={index} key={index} text={item} />
     ));
 
     return (
