@@ -6,13 +6,11 @@ import { setAddItemText } from 'actions/addItem';
 
 class AddItem extends React.Component {
   onClickAdd = () => {
-    const { addItem, setAddItemText, text } = this.props;
-
-    addItem(text);
-    setAddItemText('');
+    this.props.addItem(this.props.text);
+    this.props.setAddItemText('');
   }
 
-  onInputChange = event => {
+  onInputChange = (event) => {
     this.props.setAddItemText(event.target.value);
   }
 

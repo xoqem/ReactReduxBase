@@ -6,8 +6,7 @@ import { deleteItemAtIndex } from 'actions/items';
 
 class Item extends React.Component {
   onClickDelete = () => {
-    const { deleteItemAtIndex, index } = this.props;
-    deleteItemAtIndex(index);
+    this.props.deleteItemAtIndex(this.props.index);
   };
 
   render() {
@@ -23,9 +22,9 @@ class Item extends React.Component {
 }
 
 Item.propTypes = {
-  index: PropTypes.number,
-  text: PropTypes.string
-}
+  index: PropTypes.number.isRequired,
+  text: PropTypes.string.isRequired
+};
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({ deleteItemAtIndex }, dispatch);
