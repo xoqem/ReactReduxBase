@@ -1,14 +1,13 @@
-import { Component } from 'react';
 import { connect } from 'react-redux';
 import Item from 'components/Item';
 import React from 'react';
 
-class Items extends Component {
+class Items extends React.Component {
   render() {
     const { items } = this.props;
 
     const itemComponents = items.map((item, index) => (
-      <Item index={index} key={index} text={item} />
+      <Item index={index} key={item} text={item} />
     ));
 
     return (
@@ -18,7 +17,7 @@ class Items extends Component {
       </div>
     );
   }
-};
+}
 
 function mapStateToProps(state) {
   return {

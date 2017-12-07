@@ -1,11 +1,10 @@
 import { addItem } from 'actions/items';
 import { bindActionCreators } from 'redux';
-import { Component } from 'react';
 import { connect } from 'react-redux';
 import React from 'react';
 import { setAddItemText } from 'actions/addItem';
 
-class AddItem extends Component {
+class AddItem extends React.Component {
   onClickAdd = () => {
     const { addItem, setAddItemText, text } = this.props;
 
@@ -28,7 +27,7 @@ class AddItem extends Component {
       </div>
     );
   }
-};
+}
 
 function mapStateToProps(state) {
   return {

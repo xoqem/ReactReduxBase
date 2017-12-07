@@ -1,11 +1,10 @@
 import { bindActionCreators } from 'redux';
-import { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { deleteItemAtIndex } from 'actions/items';
 
-class Item extends Component {
+class Item extends React.Component {
   onClickDelete = () => {
     const { deleteItemAtIndex, index } = this.props;
     deleteItemAtIndex(index);
@@ -21,7 +20,7 @@ class Item extends Component {
       </div>
     );
   }
-};
+}
 
 Item.propTypes = {
   index: PropTypes.number,
