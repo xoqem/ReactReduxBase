@@ -14,7 +14,7 @@ const styles = {
     borderRadius: '5px',
     padding: '0.5em'
   }
-}
+};
 
 class AddItem extends React.Component {
   onClickAdd = () => {
