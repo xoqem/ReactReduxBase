@@ -7,7 +7,10 @@ import { setAddItemText } from 'actions/addItem';
 
 const styles = {
   addButton: {
-    marginLeft: '1em'
+    border: '1px solid #777777',
+    borderRadius: '5px',
+    marginLeft: '1em',
+    padding: '0.5em'
   },
   textInput: {
     border: '1px solid #777777',

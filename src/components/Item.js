@@ -18,9 +18,12 @@ const styles = {
     fontWeight: 'bold',
   },
   deleteButton: {
+    border: '1px solid #777777',
+    borderRadius: '5px',
     float: 'right',
     marginBottom: '0.5em',
-    marginLeft: '0.5em'
+    marginLeft: '0.5em',
+    padding: '0.15em 0.5em'
   }
 };
 
