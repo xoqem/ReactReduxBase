@@ -1,8 +1,20 @@
 import { addItem } from 'actions/items';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import injectSheet from 'react-jss';
 import React from 'react';
 import { setAddItemText } from 'actions/addItem';
+
+const styles = {
+  addButton: {
+    marginLeft: '1em'
+  },
+  textInput: {
+    border: '1px solid #777777',
+    borderRadius: '5px',
+    padding: '0.5em'
+  }
+}
 
 class AddItem extends React.Component {
   onClickAdd = () => {
@@ -15,13 +27,13 @@ class AddItem extends React.Component {
   }
 
   render() {
-    const { text } = this.props;
+    const { classes, text } = this.props;
 
     return (
       <div>
         <h2>Add Item</h2>
-        <input type="text" onChange={this.onInputChange} value={text} />
-        <button onClick={this.onClickAdd}>Add</button>
+        <input className={classes.textInput} type="text" onChange={this.onInputChange} value={text} />
+        <button className={classes.addButton} onClick={this.onClickAdd}>Add</button>
       </div>
     );
   }
@@ -40,4 +52,6 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(AddItem);
+export default injectSheet(styles)(
+  connect(mapStateToProps, mapDispatchToProps)(AddItem)
+);

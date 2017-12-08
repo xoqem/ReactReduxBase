@@ -1,8 +1,28 @@
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
+import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
 import { deleteItemAtIndex } from 'actions/items';
+
+const styles = {
+  root: {
+    backgroundColor: '#eeeeee',
+    border: '1px solid #777777',
+    borderRadius: '5px',
+    marginTop: '1em',
+    padding: '1em',
+    position: 'relative'
+  },
+  index: {
+    fontWeight: 'bold',
+  },
+  deleteButton: {
+    float: 'right',
+    marginBottom: '0.5em',
+    marginLeft: '0.5em'
+  }
+};
 
 class Item extends React.Component {
   onClickDelete = () => {
@@ -10,12 +30,14 @@ class Item extends React.Component {
   };
 
   render() {
-    const { index, text } = this.props;
+    const { classes, index, text } = this.props;
 
     return (
-      <div>
-        {index + 1}. {text}
-        <button onClick={this.onClickDelete}>Delete</button>
+      <div className={classes.root}>
+        <button className={classes.deleteButton} onClick={this.onClickDelete}>Delete</button>
+        <div>
+          <span className={classes.index}>{index + 1}. </span>{text}
+        </div>
       </div>
     );
   }
@@ -30,4 +52,6 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ deleteItemAtIndex }, dispatch);
 }
 
-export default connect(null, mapDispatchToProps)(Item);
+export default injectSheet(styles)(
+  connect(null, mapDispatchToProps)(Item)
+);
