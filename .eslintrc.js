@@ -8,7 +8,7 @@ module.exports = {
     },
 
     "rules": {
-      "comma-dangle": "off",
+      "comma-dangle": ["error", "never"],
       "function-paren-newline": "off",
       "import/extensions": "off",
       "import/no-extraneous-dependencies": "off",

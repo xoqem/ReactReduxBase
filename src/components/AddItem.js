@@ -1,5 +1,6 @@
 import { addItem } from 'actions/items';
 import { bindActionCreators } from 'redux';
+import commonStyles from 'styles/common';
 import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import React from 'react';
@@ -7,16 +8,12 @@ import { setAddItemText } from 'actions/addItem';
 
 const styles = {
   addButton: {
-    border: '1px solid #777777',
-    borderRadius: '5px',
-    marginLeft: '1em',
-    padding: '0.5em'
+    ...commonStyles.primaryButton,
+    margin: {
+      left: '1em'
+    }
   },
-  textInput: {
-    border: '1px solid #777777',
-    borderRadius: '5px',
-    padding: '0.5em'
-  }
+  textInput: commonStyles.textInput
 };
 
 class AddItem extends React.Component {

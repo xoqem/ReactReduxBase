@@ -1,4 +1,6 @@
 import { bindActionCreators } from 'redux';
+import colors from 'styles/colors';
+import commonStyles from 'styles/common';
 import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
@@ -7,23 +9,38 @@ import { deleteItemAtIndex } from 'actions/items';
 
 const styles = {
   root: {
-    backgroundColor: '#eeeeee',
-    border: '1px solid #777777',
-    borderRadius: '5px',
-    marginTop: '1em',
+    color: colors.darkText,
+    background: {
+      color: colors.lightBackground
+    },
+    border: {
+      radius: '5px',
+      style: 'none'
+    },
+    margin: {
+      top: '1em'
+    },
     padding: '1em',
     position: 'relative'
   },
   index: {
-    fontWeight: 'bold',
+    font: {
+      weight: 'bold'
+    }
   },
   deleteButton: {
-    border: '1px solid #777777',
-    borderRadius: '5px',
+    ...commonStyles.secondaryButton,
     float: 'right',
-    marginBottom: '0.5em',
-    marginLeft: '0.5em',
-    padding: '0.15em 0.5em'
+    margin: {
+      bottom: '0.5em',
+      left: '0.5em'
+    },
+    padding: {
+      bottom: '0.15em',
+      left: '0.5em',
+      right: '0.5em',
+      top: '0.15em'
+    }
   }
 };
 

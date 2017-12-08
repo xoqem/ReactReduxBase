@@ -1,11 +1,18 @@
 import AddItem from 'components/AddItem';
+import colors from 'styles/colors';
 import injectSheet from 'react-jss';
 import Items from 'components/Items';
 import React from 'react';
 
 const styles = {
   root: {
-    fontFamily: 'Helvetica Neue, Helvetica, Arial, sans-serif'
+    background: {
+      color: colors.mainBackground
+    },
+    color: colors.mainText,
+    font: {
+      family: 'Helvetica Neue, Helvetica, Arial, sans-serif'
+    }
   }
 };
 
