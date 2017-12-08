@@ -1,13 +1,17 @@
 import colors from 'styles/colors';
 
+const borderRadius = '5px';
+
 export default {
+
+  borderRadius,
 
   primaryButton: {
     background: {
       color: colors.primary
     },
     border: {
-      radius: '5px',
+      radius: borderRadius,
       style: 'none'
     },
     color: colors.primaryContrast,
@@ -25,7 +29,7 @@ export default {
     },
     border: {
       color: colors.primary,
-      radius: '5px',
+      radius: borderRadius,
       style: 'solid',
       width: '1px'
     },
@@ -41,11 +45,10 @@ export default {
   textInput: {
     border: {
       color: colors.mainText,
-      radius: '5px',
+      radius: borderRadius,
       style: 'solid',
       width: '1px'
     },
-    borderRadius: '5px',
     padding: '0.5em'
   }
 };

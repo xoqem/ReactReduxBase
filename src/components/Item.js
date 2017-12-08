@@ -14,7 +14,7 @@ const styles = {
       color: colors.lightBackground
     },
     border: {
-      radius: '5px',
+      radius: commonStyles.borderRadius,
       style: 'none'
     },
     margin: {
