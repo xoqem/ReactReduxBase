@@ -25,9 +25,7 @@ export default (state = defaultState, action) => {
       return {
         ...state,
         selectedThemeName: themeName,
-        theme: generateTheme(
-          require('theming/themes/' + themeName)
-        )
+        theme: getThemeObject(themeName)
       };
     }
 

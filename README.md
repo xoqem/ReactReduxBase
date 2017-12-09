@@ -20,7 +20,7 @@ yarn install
 Creates a webpack dev server and watches for changes:
 
 ```
-yarn run start
+yarn start
 ```
 
 Open http://localhost:8080/ in a browser.
@@ -31,7 +31,7 @@ Open http://localhost:8080/ in a browser.
 Have webpack watch for changes and automatically rebuild with:
 
 ```
-yarn run watch
+yarn watch
 ```
 
 Open dist/index.html in a browser.
@@ -42,7 +42,7 @@ Open dist/index.html in a browser.
 Build the project:
 
 ```
-yarn run build
+yarn build
 ```
 
 Open dist/index.html in a browser.
