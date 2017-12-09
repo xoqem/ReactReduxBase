@@ -26,13 +26,25 @@ class AddItem extends React.Component {
     this.props.setAddItemText(event.target.value);
   }
 
+  onInputKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      this.onClickAdd();
+    }
+  }
+
   render() {
     const { classes, text } = this.props;
 
     return (
       <div>
         <h2>Add Item</h2>
-        <input className={classes.textInput} type="text" onChange={this.onInputChange} value={text} />
+        <input
+          className={classes.textInput}
+          onChange={this.onInputChange}
+          onKeyPress={this.onInputKeyPress}
+          type="text"
+          value={text}
+        />
         <button className={classes.addButton} onClick={this.onClickAdd}>Add</button>
       </div>
     );

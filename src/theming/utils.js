@@ -16,6 +16,7 @@ export const generateTheme = ({ borderRadius, colors }) => ({
       style: 'none'
     },
     color: colors.primaryContrast,
+    cursor: 'pointer',
     padding: {
       bottom: '0.5em',
       left: '1em',
@@ -35,6 +36,7 @@ export const generateTheme = ({ borderRadius, colors }) => ({
       width: '1px'
     },
     color: colors.primary,
+    cursor: 'pointer',
     padding: {
       bottom: '0.5em',
       left: '1em',
