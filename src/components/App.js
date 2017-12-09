@@ -1,20 +1,20 @@
 import AddItem from 'components/AddItem';
-import colors from 'styles/colors';
 import injectSheet from 'react-jss';
 import Items from 'components/Items';
 import React from 'react';
+import { withTheme } from 'theming';
 
-const styles = {
+const styles = theme => ({
   root: {
     background: {
-      color: colors.mainBackground
+      color: theme.colors.mainBackground
     },
-    color: colors.mainText,
+    color: theme.colors.mainText,
     font: {
       family: 'Helvetica Neue, Helvetica, Arial, sans-serif'
     }
   }
-};
+});
 
 const App = ({ classes }) => (
   <div className={classes.root}>
@@ -24,4 +24,6 @@ const App = ({ classes }) => (
   </div>
 );
 
-export default injectSheet(styles)(App);
+export default withTheme(
+  injectSheet(styles)(App)
+);

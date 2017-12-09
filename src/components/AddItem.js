@@ -1,20 +1,20 @@
 import { addItem } from 'actions/items';
 import { bindActionCreators } from 'redux';
-import commonStyles from 'styles/common';
 import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import React from 'react';
 import { setAddItemText } from 'actions/addItem';
+import { withTheme } from 'theming';
 
-const styles = {
+const styles = theme => ({
   addButton: {
-    ...commonStyles.primaryButton,
+    ...theme.primaryButton,
     margin: {
       left: '1em'
     }
   },
-  textInput: commonStyles.textInput
-};
+  textInput: theme.textInput
+});
 
 class AddItem extends React.Component {
   onClickAdd = () => {
@@ -52,6 +52,8 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default injectSheet(styles)(
-  connect(mapStateToProps, mapDispatchToProps)(AddItem)
+export default withTheme(
+  injectSheet(styles)(
+    connect(mapStateToProps, mapDispatchToProps)(AddItem)
+  )
 );

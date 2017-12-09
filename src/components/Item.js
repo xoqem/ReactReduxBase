@@ -1,20 +1,19 @@
 import { bindActionCreators } from 'redux';
-import colors from 'styles/colors';
-import commonStyles from 'styles/common';
 import { connect } from 'react-redux';
+import { deleteItemAtIndex } from 'actions/items';
 import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
-import { deleteItemAtIndex } from 'actions/items';
+import { withTheme } from 'theming';
 
-const styles = {
+const styles = theme => ({
   root: {
-    color: colors.darkText,
+    color: theme.colors.darkText,
     background: {
-      color: colors.lightBackground
+      color: theme.colors.lightBackground
     },
     border: {
-      radius: commonStyles.borderRadius,
+      radius: theme.borderRadius,
       style: 'none'
     },
     margin: {
@@ -29,7 +28,7 @@ const styles = {
     }
   },
   deleteButton: {
-    ...commonStyles.secondaryButton,
+    ...theme.secondaryButton,
     float: 'right',
     margin: {
       bottom: '0.5em',
@@ -42,7 +41,7 @@ const styles = {
       top: '0.15em'
     }
   }
-};
+});
 
 class Item extends React.Component {
   onClickDelete = () => {
@@ -72,6 +71,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ deleteItemAtIndex }, dispatch);
 }
 
-export default injectSheet(styles)(
-  connect(null, mapDispatchToProps)(Item)
+export default withTheme(
+  injectSheet(styles)(
+    connect(null, mapDispatchToProps)(Item)
+  )
 );

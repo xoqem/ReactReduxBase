@@ -1,18 +1,17 @@
-import colors from 'styles/colors';
-import commonStyles from 'styles/common';
 import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import Item from 'components/Item';
 import React from 'react';
+import { withTheme } from 'theming';
 
-const styles = {
+const styles = theme => ({
   root: {
-    color: colors.lightText,
+    color: theme.colors.lightText,
     background: {
-      color: colors.darkBackground
+      color: theme.colors.darkBackground
     },
     border: {
-      radius: commonStyles.borderRadius,
+      radius: theme.borderRadius,
       style: 'none'
     },
     margin: {
@@ -20,7 +19,7 @@ const styles = {
     },
     padding: '1em'
   }
-}
+});
 
 class Items extends React.Component {
   render() {
@@ -45,6 +44,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default injectSheet(styles)(
-  connect(mapStateToProps)(Items)
+export default withTheme(
+  injectSheet(styles)(
+    connect(mapStateToProps)(Items)
+  )
 );
