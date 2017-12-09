@@ -1,20 +1,11 @@
-const borderRadius = '5px';
-
-const colors = {
-  darkBackground: '#555555',
-  darkText: '#333333',
-  lightBackground: '#eeeeee',
-  lightText: '#ffffff',
-  mainBackground: '#ffffff',
-  mainText: '#333333',
-  primary: '#0061ff',
-  primaryContrast: '#ffffff'
-};
-
-export default {
+export const generateTheme = ({ borderRadius, colors }) => ({
 
   borderRadius,
   colors,
+
+  font: {
+    family: 'Helvetica Neue, Helvetica, Arial, sans-serif'
+  },
 
   primaryButton: {
     background: {
@@ -61,4 +52,4 @@ export default {
     },
     padding: '0.5em'
   }
-};
+});

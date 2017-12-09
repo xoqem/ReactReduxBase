@@ -5,14 +5,23 @@ import React from 'react';
 import { withTheme } from 'theming';
 
 const styles = theme => ({
-  root: {
-    background: {
-      color: theme.colors.mainBackground
+  '@global': {
+    body: {
+      background: {
+        color: theme.colors.mainBackground
+      },
+      margin: 0,
+      padding: 0
     },
-    color: theme.colors.mainText,
-    font: {
-      family: 'Helvetica Neue, Helvetica, Arial, sans-serif'
+    html: {
+      margin: 0,
+      padding: 0
     }
+  },
+  root: {
+    color: theme.colors.mainText,
+    font: theme.font,
+    padding: '1em'
   }
 });
 

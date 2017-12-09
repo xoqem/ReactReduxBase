@@ -1,19 +1,18 @@
 import App from 'components/App';
-import { createStore } from 'redux';
-import defaultTheme from 'themes/default';
-import { Provider } from 'react-redux';
+import { connect } from 'react-redux';
 import React from 'react';
-import reducer from 'reducers';
 import { ThemeProvider } from 'theming';
 
-const store = createStore(reducer);
-
-const Main = () => (
-  <Provider store={store}>
-    <ThemeProvider theme={defaultTheme}>
-      <App />
-    </ThemeProvider>
-  </Provider>
+const Main = ({ theme }) => (
+  <ThemeProvider theme={theme}>
+    <App />
+  </ThemeProvider>
 );
 
-export default Main;
+function mapStateToProps(state) {
+  return {
+    theme: state.theme.theme
+  };
+}
+
+export default connect(mapStateToProps)(Main);
