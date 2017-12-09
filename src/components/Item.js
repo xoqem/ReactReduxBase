@@ -8,9 +8,9 @@ import { withTheme } from 'theming';
 
 const styles = theme => ({
   root: {
-    color: theme.colors.darkText,
+    color: theme.colors.secondaryContainerText,
     background: {
-      color: theme.colors.lightBackground
+      color: theme.colors.secondaryContainerBackground
     },
     border: {
       radius: theme.borderRadius,

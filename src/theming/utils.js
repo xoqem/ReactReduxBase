@@ -46,12 +46,16 @@ export const generateTheme = ({ borderRadius, colors }) => ({
   },
 
   textInput: {
+    background: {
+      color: colors.inputBackground
+    },
     border: {
-      color: colors.mainText,
+      color: colors.inputBorder,
       radius: borderRadius,
       style: 'solid',
       width: '1px'
     },
+    color: colors.inputText,
     padding: '0.5em'
   }
 });

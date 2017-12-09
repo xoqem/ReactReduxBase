@@ -6,9 +6,9 @@ import { withTheme } from 'theming';
 
 const styles = theme => ({
   root: {
-    color: theme.colors.lightText,
+    color: theme.colors.primaryContainerText,
     background: {
-      color: theme.colors.darkBackground
+      color: theme.colors.primaryContainerBackground
     },
     border: {
       radius: theme.borderRadius,
