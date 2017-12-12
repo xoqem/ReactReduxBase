@@ -27,7 +27,8 @@ class ThemeSelector extends React.Component {
         <select
           className={classes.select}
           onChange={this.onSelectChange}
-          value={selectedThemeName}>
+          value={selectedThemeName}
+        >
           {selectOptions}
         </select>
       </div>
