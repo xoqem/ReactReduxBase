@@ -1,6 +1,7 @@
 import { connect } from 'react-redux';
-import React from 'react';
 import { formatMessage } from 'FIXME';
+import get from 'lodash/get';
+import React from 'react';
 
 function mapStateToProps(state) {
   return {
@@ -9,21 +10,18 @@ function mapStateToProps(state) {
   };
 }
 
-function getMessage(key, locale, messages) {
-  const localeMessages = messages && messages[locale];
-  const formattedMessage =
-    localeMessages &&
-    localeMessages[key] &&
-    formatMessage(localeMessages[key], locale);
-  return formattedMessage || '';
+function getMessage(key, values, locale, messages) {
+  const localeMessages = get(messages, locale);
+  const specificMessage = get(localeMessages, key);
+  return formatMessage(specificMessage, values);
 }
 
 export default (WrappedComponent) => {
   const ComponentWithI18n = props => (
     <WrappedComponent
       {...props}
-      getMessage={key => (
-        getMessage(key, props.locale, props.message)
+      getMessage={(key, values) => (
+        getMessage(key, values, props.locale, props.message)
       )}
     />
   );
