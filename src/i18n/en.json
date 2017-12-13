@@ -2,6 +2,7 @@
   "addItem.addButton": "Add",
   "addItem.title": "Add Item",
   "app.title": "React Redux Base",
+  "item.deleteButton": "Delete",
   "items.title": "Items",
   "themeSelector.title": "Theme Selector",
   "localeSelector.title": "Locale Selector"

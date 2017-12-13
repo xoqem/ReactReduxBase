@@ -4,6 +4,7 @@ import { deleteItemAtIndex } from 'actions/items';
 import injectSheet from 'react-jss';
 import PropTypes from 'prop-types';
 import React from 'react';
+import withI18n from 'components/withI18n';
 import { withTheme } from 'theming';
 
 const styles = theme => ({
@@ -49,11 +50,18 @@ class Item extends React.Component {
   };
 
   render() {
-    const { classes, index, text } = this.props;
+    const {
+      classes,
+      getMessage,
+      index,
+      text
+    } = this.props;
 
     return (
       <div className={classes.root}>
-        <button className={classes.deleteButton} onClick={this.onClickDelete}>Delete</button>
+        <button className={classes.deleteButton} onClick={this.onClickDelete}>
+          {getMessage('item.deleteButton')}
+        </button>
         <div>
           <span className={classes.index}>{index + 1}. </span>{text}
         </div>
@@ -71,8 +79,8 @@ function mapDispatchToProps(dispatch) {
   return bindActionCreators({ deleteItemAtIndex }, dispatch);
 }
 
-export default withTheme(
+export default withI18n(withTheme(
   injectSheet(styles)(
     connect(null, mapDispatchToProps)(Item)
   )
-);
+));
