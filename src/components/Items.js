@@ -32,7 +32,7 @@ class Items extends React.Component {
 
     return (
       <div className={classes.root}>
-        <h2>Items</h2>
+        <h2>{getMessage('items.title')}</h2>
         {itemComponents}
       </div>
     );

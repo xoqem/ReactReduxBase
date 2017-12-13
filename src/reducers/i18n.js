@@ -4,7 +4,8 @@ const defaultState = {
   locale: 'en',
   messages: {
     en
-  }
+  },
+  locales: ['en']
 };
 
 export default (state = defaultState, action) => {
@@ -19,6 +20,7 @@ export default (state = defaultState, action) => {
     case 'SET_MESSAGES': {
       return {
         ...state,
+        locales: action.messages.keys,
         messages: action.messages
       };
     }

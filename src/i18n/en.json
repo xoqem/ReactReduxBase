@@ -3,5 +3,6 @@
   "addItem.title": "Add Item",
   "app.title": "React Redux Base",
   "items.title": "Item",
-  "themeSelector.title": "Theme Selector"
+  "themeSelector.title": "Theme Selector",
+  "localeSelector.title": "Locale Selector"
 }

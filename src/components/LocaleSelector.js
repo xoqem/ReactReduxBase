@@ -1,4 +1,4 @@
-import { setThemeName } from 'actions/theme';
+import { setLocale } from 'actions/i18n';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
@@ -10,30 +10,30 @@ const styles = theme => ({
   select: theme.textInput
 });
 
-class ThemeSelector extends React.Component {
+class LocaleSelector extends React.Component {
   onSelectChange = (event) => {
-    this.props.setThemeName(event.target.value);
+    this.props.setLocale(event.target.value);
   }
 
   render() {
     const {
       classes,
       getMessage,
-      selectedThemeName,
-      themeNames
+      locale,
+      locales
     } = this.props;
 
-    const selectOptions = themeNames.map(themeName => (
-      <option key={themeName} value={themeName}>{themeName}</option>
+    const selectOptions = locales.map(value => (
+      <option key={value} value={value}>{value}</option>
     ));
 
     return (
       <div>
-        <h2>{getMessage('themeSelector.title')}</h2>
+        <h2>{getMessage('localeSelector.title')}</h2>
         <select
           className={classes.select}
           onChange={this.onSelectChange}
-          value={selectedThemeName}
+          value={locale}
         >
           {selectOptions}
         </select>
@@ -44,19 +44,19 @@ class ThemeSelector extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    selectedThemeName: state.theme.selectedThemeName,
-    themeNames: state.theme.themeNames
+    locale: state.i18n.locale,
+    locales: state.i18n.locales
   };
 }
 
 function mapDispatchToProps(dispatch) {
   return bindActionCreators({
-    setThemeName
+    setLocale
   }, dispatch);
 }
 
 export default withI18n(withTheme(
   injectSheet(styles)(
-    connect(mapStateToProps, mapDispatchToProps)(ThemeSelector)
+    connect(mapStateToProps, mapDispatchToProps)(LocaleSelector)
   )
 ));

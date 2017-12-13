@@ -1,9 +1,9 @@
-export const setI18nLocale = locale => ({
+export const setLocale = locale => ({
   type: 'SET_LOCALE',
   locale
 });
 
-export const setI18nMessages = messages => ({
+export const setMessages = messages => ({
   type: 'SET_MESSAGES',
   messages
 });

@@ -1,6 +1,7 @@
 import AddItem from 'components/AddItem';
 import injectSheet from 'react-jss';
 import Items from 'components/Items';
+import LocaleSelector from 'components/LocaleSelector';
 import React from 'react';
 import ThemeSelector from 'components/ThemeSelector';
 import withI18n from 'components/withI18n';
@@ -30,6 +31,7 @@ const styles = theme => ({
 const App = ({ classes, getMessage }) => (
   <div className={classes.root}>
     <h1>{getMessage('app.title')}</h1>
+    <LocaleSelector />
     <ThemeSelector />
     <AddItem />
     <Items />
