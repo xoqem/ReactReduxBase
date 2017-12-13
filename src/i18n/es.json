@@ -1,0 +1,8 @@
+{
+  "addItem.addButton": "Añadir",
+  "addItem.title": "Añadir Artículo",
+  "app.title": "React Redux Núcleo",
+  "items.title": "Los Artículos",
+  "themeSelector.title": "Selector de Tema",
+  "localeSelector.title": "Selector de Locales"
+}
