@@ -51,3 +51,12 @@ yarn build
 ```
 
 Open dist/index.html in a browser.
+
+
+### Lint
+
+Lint the code with:
+
+```
+yarn lint
+```
