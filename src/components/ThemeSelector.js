@@ -3,6 +3,7 @@ import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import React from 'react';
+import withI18n from 'components/withI18n';
 import { withTheme } from 'theming';
 
 const styles = theme => ({
@@ -15,7 +16,7 @@ class ThemeSelector extends React.Component {
   }
 
   render() {
-    const { classes, selectedThemeName, themeNames } = this.props;
+    const { classes, getMessage, selectedThemeName, themeNames } = this.props;
 
     const selectOptions = themeNames.map(themeName => (
       <option key={themeName} value={themeName}>{themeName}</option>
@@ -49,8 +50,8 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default withTheme(
+export default withI18n(withTheme(
   injectSheet(styles)(
     connect(mapStateToProps, mapDispatchToProps)(ThemeSelector)
   )
-);
+));

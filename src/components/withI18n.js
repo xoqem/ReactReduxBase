@@ -1,6 +1,5 @@
 import { connect } from 'react-redux';
-// FIXME: put Yahoo's correct package name instead of FIXME below
-import { IntlMessageFormat } from 'FIXME';
+import IntlMessageFormat from 'intl-messageformat';
 import get from 'lodash/get';
 import React from 'react';
 
@@ -12,9 +11,9 @@ function mapStateToProps(state) {
 }
 
 function getMessage(key, values, locale, messages) {
-  const message = getMessageForLocale(key, locale, messages);
-  var msg = new IntlMessageFormat(message, locale);
-  return msg.format(values);
+  const messageString = getMessageForLocale(key, locale, messages);
+  const formatter = new IntlMessageFormat(messageString, locale);
+  return formatter.format(values);
 }
 
 function getMessageForLocale(key, locale, messages) {
@@ -32,7 +31,7 @@ export default (WrappedComponent) => {
     <WrappedComponent
       {...props}
       getMessage={(key, values) => (
-        getMessage(key, values, props.locale, props.message)
+        getMessage(key, values, props.locale, props.messages)
       )}
     />
   );

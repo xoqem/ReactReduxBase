@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import React from 'react';
 import { setAddItemText } from 'actions/addItem';
+import withI18n from 'components/withI18n';
 import { withTheme } from 'theming';
 
 const styles = theme => ({
@@ -33,11 +34,11 @@ class AddItem extends React.Component {
   }
 
   render() {
-    const { classes, text } = this.props;
+    const { classes, getMessage, text } = this.props;
 
     return (
       <div>
-        <h2>Add Item</h2>
+        <h2>{getMessage('addItem.title')}</h2>
         <input
           className={classes.textInput}
           onChange={this.onInputChange}
@@ -45,7 +46,9 @@ class AddItem extends React.Component {
           type="text"
           value={text}
         />
-        <button className={classes.addButton} onClick={this.onClickAdd}>Add</button>
+        <button className={classes.addButton} onClick={this.onClickAdd}>
+          {getMessage('addItem.addButton')}
+        </button>
       </div>
     );
   }
@@ -64,8 +67,8 @@ function mapDispatchToProps(dispatch) {
   }, dispatch);
 }
 
-export default withTheme(
+export default withI18n(withTheme(
   injectSheet(styles)(
     connect(mapStateToProps, mapDispatchToProps)(AddItem)
   )
-);
+));

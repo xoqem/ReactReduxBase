@@ -3,6 +3,7 @@ import injectSheet from 'react-jss';
 import Items from 'components/Items';
 import React from 'react';
 import ThemeSelector from 'components/ThemeSelector';
+import withI18n from 'components/withI18n';
 import { withTheme } from 'theming';
 
 const styles = theme => ({
@@ -26,15 +27,15 @@ const styles = theme => ({
   }
 });
 
-const App = ({ classes }) => (
+const App = ({ classes, getMessage }) => (
   <div className={classes.root}>
-    <h1>React Redux Base</h1>
+    <h1>{getMessage('app.title')}</h1>
     <ThemeSelector />
     <AddItem />
     <Items />
   </div>
 );
 
-export default withTheme(
+export default withI18n(withTheme(
   injectSheet(styles)(App)
-);
+));

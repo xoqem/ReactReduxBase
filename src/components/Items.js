@@ -2,6 +2,7 @@ import { connect } from 'react-redux';
 import injectSheet from 'react-jss';
 import Item from 'components/Item';
 import React from 'react';
+import withI18n from 'components/withI18n';
 import { withTheme } from 'theming';
 
 const styles = theme => ({
@@ -23,7 +24,7 @@ const styles = theme => ({
 
 class Items extends React.Component {
   render() {
-    const { classes, items } = this.props;
+    const { classes, getMessage, items } = this.props;
 
     const itemComponents = items.map((item, index) => (
       <Item index={index} key={index} text={item} />
@@ -44,8 +45,8 @@ function mapStateToProps(state) {
   };
 }
 
-export default withTheme(
+export default withI18n(withTheme(
   injectSheet(styles)(
     connect(mapStateToProps)(Items)
   )
-);
+));
