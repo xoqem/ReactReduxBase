@@ -1,5 +1,5 @@
 # ReactReduxBase
-Boilerplate for a react / redux project with some opinionated decisions on other libraries for handling styling, etc.  All of the decisions were necessarily best practice, so reference at your own peril.  It is just the product of me wanting to experiment with tying together various libraries and ways of doing things.
+Boilerplate for a react / redux project with some opinionated decisions on other libraries for handling styling, etc.  All of the decisions weren't necessarily best practice, so reference at your own peril.  It is just the product of me wanting to experiment with tying together various libraries and ways of doing things.
 
 ## Libraries Used
 
