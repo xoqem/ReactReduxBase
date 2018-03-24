@@ -10,7 +10,7 @@ const styles = theme => ({
   select: theme.textInput
 });
 
-class ThemeSelector extends React.Component {
+class ThemeSelector extends React.PureComponent {
   onSelectChange = (event) => {
     this.props.setThemeName(event.target.value);
   }

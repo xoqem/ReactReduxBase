@@ -10,7 +10,7 @@ const styles = theme => ({
   select: theme.textInput
 });
 
-class LocaleSelector extends React.Component {
+class LocaleSelector extends React.PureComponent {
   onSelectChange = (event) => {
     this.props.setLocale(event.target.value);
   }

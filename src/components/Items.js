@@ -22,7 +22,7 @@ const styles = theme => ({
   }
 });
 
-class Items extends React.Component {
+class Items extends React.PureComponent {
   render() {
     const { classes, getMessage, items } = this.props;
 

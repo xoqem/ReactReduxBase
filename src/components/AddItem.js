@@ -17,7 +17,7 @@ const styles = theme => ({
   textInput: theme.textInput
 });
 
-class AddItem extends React.Component {
+class AddItem extends React.PureComponent {
   onClickAdd = () => {
     this.props.addItem(this.props.text);
     this.props.setAddItemText('');

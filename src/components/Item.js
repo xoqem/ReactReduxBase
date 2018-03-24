@@ -44,7 +44,7 @@ const styles = theme => ({
   }
 });
 
-class Item extends React.Component {
+class Item extends React.PureComponent {
   onClickDelete = () => {
     this.props.deleteItemAtIndex(this.props.index);
   };
